@@ -1,6 +1,6 @@
 name: Test Laravel Github action
 on:
-  pull_request:
+  push:
     branches:
       - main
       - develop
@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: [ '8.0','7.4' ]
+        php-versions: [ '8.2' ]
         dependency-stability: [ prefer-stable ]
 
     name: P${{ matrix.php-versions }} - L${{ matrix.laravel }} - ${{ matrix.dependency-stability }} - ${{ matrix.operating-system}}
