@@ -20,8 +20,8 @@ jobs:
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
-      - name: generate kay
-        run: php artisan key:generate
+      - name: create .env file
+        run: cp .env.example .env
  
       - name: Tests
         run: php artisan test
